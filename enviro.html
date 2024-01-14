@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure Tutorial</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #main {
+            margin-top: 7vw;
+            width: 95%;
+
+        }
+
+        /* .point {
+            position: relative;
+            height: 16rem;
+            width: 34rem;
+            overflow: hidden;
+        }
+
+        .point img {
+            height: 100%;
+            width: 100%;
+            transition: opacity 1s ease;
+        }
+
+        .second-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .point:hover img {
+            opacity: 0;
+        }
+
+        .point:hover .second-image ,
+        .point:hover .third-image{
+            opacity: 1;
+        }
+ */
+
+        .point {
+            position: relative;
+            height: 16rem;
+            width: 34rem;
+            overflow: hidden;
+        }
+
+        .point img {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .point img:nth-child(1) {
+            animation: fadeInOut 7s infinite;
+        }
+
+        .point img:nth-child(2) {
+            animation: fadeInOut 7s infinite 2s;
+        }
+
+        .point img:nth-child(3) {
+            animation: fadeInOut 7s infinite 4s;
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+
+
+        h1 {
+            font-size: 3vw;
+            color: rgba(0, 0, 255, 0.637);
+            text-align: center;
+        }
+
+        .intro {
+            margin-top: 5vw;
+        }
+
+        p {
+            color: black;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: rgba(0, 0, 255, 0.667);
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            margin-bottom: 10px;
+        }
+
+        .ig {
+            height: 100%;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .link>li>h4>a {
+            color: green;
+            text-decoration: none;
+            padding-left: 0.4rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .red-bullet {
+            color: #ff0000;
+            /* Replace with your preferred hex code for red */
+            margin-right: 8px;
+            /* Adjust spacing as needed */
+        }
+    </style>
+    <div id="main">
+        <header>
+            <h1>Data Structure Tutorial</h1>
+        </header>
+
+        <section>
+            <p>
+                To do data structure and implement its various concepts
+                in these upcoming tutorials, you must have a compiler to execute all the concepts as a program. Here,
+                all
+                programs of the data structure will be shown using C++. So for that, you have to install a local
+                compiler on
+                your PC or laptop.
+            </p>
+        </section>
+
+        <section>
+            <h2> C++ Compiler Setup</h2>
+            <p>If you want to install the C++ compiler on your PC to perform the data structure concepts, then you have
+                many
+                choices. The first choice you can use a text editor such as vi / vim / gedit, or EMACS for Linux Users.
+                For
+                Windows, the text editors will be Notepad or Notepad++. The name and versions of text editors vary based
+                on
+                the operating systems.
+                The files you create with your text editor will be the source file and will contain the program's source
+                code. Here you will be using C++, so the source file will have the extension as ".cpp".
+
+                Another option you can install a compiler for C++. There are various C++ compilers available online, and
+                some of them come with GUI, such as:</p>
+            <h3>For Windows:</h3>
+            <ul class="link">
+                <li>
+                    <h4> <span class="red-bullet">&#8226;</span><a href="https://turbo-c.net/turbo-c-download/">Turbo
+                            C++</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href="https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/">Borland
+                            C++</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href=" https://sourceforge.net/projects/orwelldevcpp/">Dev C++</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href=" https://www.intel.com/content/www/us/en/developer/articles/tool/intel-system-studio-download-and-install-intel-c-compiler.html">Intel
+                            C++</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href=" https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Visual
+                            C++</a></h4>
+                </li>
+            </ul>
+            <h3>For Linux:</h3>
+            <ul class="link">
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a href="https://sourceforge.net/projects/open64/">Open
+                            64</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href=" https://sourceforge.net/projects/gcc-win64/">GNU Compiler Collection</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href=" https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html">Intel
+                            C++ Compiler PE</a></h4>
+                </li>
+
+            </ul>
+
+            <h3>MAC:</h3>
+            <ul class="link">
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href="https://apps.apple.com/us/app/c-c-programming-language/id1016322367">Apple C++</a>
+                    </h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href="https://www.oracle.com/tools/developerstudio/downloads/developer-studio-jsp.html">Sun
+                            Studio</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href="https://cygwin.com/packages/summary/gcc-g++.html"> Cygwin (GNU C++)</a></h4>
+                </li>
+                <li>
+                    <h4><span class="red-bullet">&#8226;</span><a
+                            href=" https://digital-mars-c-c-compiler.en.softonic.com/">Digital Mars C++</a></h4>
+                </li>
+
+            </ul>
+            <p>The source code that will be written into the compiler and saved as the source file is in human-readable
+                form, which will be your data structure program. That code then needs to be "compiled" to be converted
+                into machine language so that the CPU can actually execute the program as the code is written.
+
+                Out of all, any one of these above C++ language compilers will be required for compiling your source
+                code into the final executable program and creating the ".exe" file. Basic knowledge about a programming
+                language is required before approaching to grab the concepts of the data structure.
+
+                The most commonly used and free available compiler is the GNU C/C++ compiler, or you can use different
+                compilers from Intel, Oracle, or Solaris.
+
+            </p>
+        </section>
+
+        <section>
+            <h2>Steps To Install Turbo C++ Compiler</h2>
+            <h3>Step 1:</h3>  <p>Turbo C++ Compiler is freely available to use; you need to search on the Internet to</p>
+            download it.
+
+            <h3>Step 2:</h3>  <p>Unzip the compiler that you have downloaded, i.e., the "Turbo C++ 3.2.zip" file.</p>
+
+            <h3>Step 3:</h3> <p> Run the "setup.exe" file.
+
+            </p>
+            <h3>Step 4:</h3><p>Select the location path to place the compiler on your PC.</p>
+        </section>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Data Structures and Types</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #main {
+            margin-top: 7vw;
+
+        }
+
+        /* .point {
+            position: relative;
+            height: 16rem;
+            width: 34rem;
+            overflow: hidden;
+        }
+
+        .point img {
+            height: 100%;
+            width: 100%;
+            transition: opacity 1s ease;
+        }
+
+        .second-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .point:hover img {
+            opacity: 0;
+        }
+
+        .point:hover .second-image ,
+        .point:hover .third-image{
+            opacity: 1;
+        }
+ */
+
+ .point {
+  position: relative;
+  height: 16rem;
+  width: 34rem;
+  overflow: hidden;
+}
+
+.point img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.point img:nth-child(1) {
+  animation: fadeInOut 7s infinite;
+}
+
+.point img:nth-child(2) {
+  animation: fadeInOut 7s infinite 2s;
+}
+
+.point img:nth-child(3) {
+  animation: fadeInOut 7s infinite 4s;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+        h1 {
+            font-size: 3vw;
+            color: rgba(0, 0, 255, 0.637);
+            text-align: center;
+        }
+
+        .intro {
+            margin-top: 5vw;
+        }
+
+        p {
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section h2 {
+            color: rgba(0, 0, 255, 0.667);
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            margin-bottom: 10px;
+        }
+
+        .ig {
+            height: 100%;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar bg-secondary fixed-top" data-bs-theme="">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">Nexaz.com</a>
+            <a class="navbar-brand" href="index.html">HOME</a>
+            <a class="navbar-brand" href="#">Data Structure Tutorial </a>
+            <a class="navbar-brand " href="#">Nexaz.com</a>
+            <a class="navbar-brand" href="#">HOME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Data Structure Tutorial</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="enviro.html">Data Structures Environment Setup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <diV id="main">
+        <h1>Data and Data Structures</h1>
+
+        <section>
+            <h2 class="intro">Introduction</h2>
+            <p>
+                &#x2022;In the modern world, data and its information have significance, and different implementations
+                take place to store it in different ways. Data is simply a collection of facts and figures, or you can
+                say that data is a set of values or values in a particular format that refers to a single set of item
+                values.
+            </p>
+            <p>
+                &#x2022;The data items are then classified into sub-items, the group of items that are not called the
+                simple primary form of the item.
+            </p>
+        </section>
+
+        <section>
+            <h2>Elementary and Group Data Items</h2>
+            <p>
+                &#x2022;Let's take an example where a student's name can be broken down into three sub-items: first,
+                middle, and last. But, an ID assigned to a student will usually be considered a single item.
+            </p>
+            <div class="point">
+                <img src="assets/Data-Structure.webp" alt="First Image">
+                <img class="second-image" src="assets/tree.png" alt="Second Image">
+                <img class="third-image" src="assets/C++.png" alt="third-image">
+            </div>
+            <p>
+                &#x2022;The example mentioned above, such as ID, Age, Gender, First, Middle, Last, Street, Area, etc.,
+                are elementary data items, whereas the Name and the Address are group data items.
+            </p>
+        </section>
+
+        <section>
+            <h2>Data Structure in Computers</h2>
+            <p>
+                &#x2022;In the context of computers, the data structure is a specific way of storing and organizing data
+                in the computer's memory so that these data can be easily retrieved and efficiently used when needed
+                later. The data can be managed in many ways, such as a logical or mathematical model for a particular
+                data organization called a data structure.
+            </p>
+            <p>
+                &#x2022;The variety of a specific data model depends on two factors:
+            </p>
+            <ul>
+                <li>&#x2022;First, it must be loaded enough into the structure to reflect the actual relationship of the
+                    data with a real-world object.</li>
+                <li>&#x2022;Second, the formation should be so simple that one can efficiently process the data whenever
+                    necessary.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Types of Data Structures</h2>
+            <p>
+                Data structures can be subdivided into two major types:
+            </p>
+            <ul>
+                <li><strong>Linear Data Structure</strong></li>
+                <li><strong>Non-linear Data Structure</strong></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Linear Data Structure</h2>
+            <p>
+                &#x2022; A data structure is said to be linear if its elements combine to form any specific order. There
+                are two techniques for representing such linear structure within memory.
+            </p>
+            <ul>
+                <li>&#x2022;The first way is to provide a linear relationship between all the elements represented using
+                    a linear memory location. These linear structures are called arrays.</li>
+                <li>&#x2022;The second technique provides a linear relationship between all the elements represented
+                    using the concept of pointers or links. These linear structures are called linked lists.</li>
+            </ul>
+            <p>
+                The typical examples of linear data structures are:
+            </p>
+            <ul>
+                <li>&#x276F;Arrays</li>
+                <li>&#x276F;Queues</li>
+                <li>&#x276F;Stacks</li>
+                <li>&#x276F;Linked lists</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Non-Linear Data Structures</h2>
+            <p>
+                &#x2022;This structure mainly represents data with a hierarchical relationship between different
+                elements.
+            </p>
+            <p>
+                &#x2022;Examples of Non-Linear Data Structures are listed below:
+            </p>
+            <ul>
+                <li>&#x276F;Graphs</li>
+                <li>&#x276F;Family of trees</li>
+                <li>&#x276F;Table of contents</li>
+            </ul>
+            <p>
+                <strong>Tree:</strong> In this case, the data often has a hierarchical relationship between the
+                different elements. The data structure representing this relationship is called a rooted tree graph or
+                tree.
+            </p>
+            <p>
+                <strong>Graph:</strong> In this case, the data sometimes has relationships between pair elements, which
+                do not necessarily follow a hierarchical structure. Such a data structure is called a graph.
+
+            </p>
+        </section>
+    </diV>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

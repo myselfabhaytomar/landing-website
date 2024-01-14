@@ -1,19 +1,72 @@
 body {
+
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    padding-bottom: 0;
     box-sizing: border-box;
     background-color: #f4f4f4;
 }
+/* video {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+    object-fit: cover;
+    z-index: -1;
+} */
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 20px;
+
+ 
+.point {
+    position: relative;
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+  }
+  
+  .point img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  .point img:nth-child(1) {
+    animation: fadeInOut 7s infinite;
+  }
+  
+  .point img:nth-child(2) {
+    animation: fadeInOut 7s infinite 3s;
+  }
+  
+  .point img:nth-child(3) {
+    animation: fadeInOut 7s infinite 6s;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  
+  
+.point>h1{
+    z-index: 99;
+    position: fixed;
 }
 
 #main {
-    z-index: 0;
+    z-index:1;
 }
 
 .quote {
@@ -21,12 +74,16 @@ body {
 }
 
 header {
-    background-image: url('https://images.unsplash.com/photo-1703344378005-4b9486658f62?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    padding: 40px 0;
-    color: aliceblue;
+    line-height: 90vh;
+    font-size: 3vw;
+    color: transparent;
+    -webkit-text-stroke: 2px black;
     text-align: center;
 }
 
+header h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 section {
     padding: 40px 0;
 }
@@ -36,11 +93,16 @@ section {
 }
 
 .cta {
-    background-color: #333;
-    color: #fff;
-    margin-top:1vw
-}
+    background-color: #333333eb;
+    margin-top: 3vw;
 
+}
+.contain{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+ 
 button {
     background-color: #fff;
     color: blue;
@@ -72,11 +134,20 @@ button {
 }
 
 button:hover {
-    background-color:#826b6b;
+    background-color: #826b6b;
+}
+
+.cta p {
+    padding-left: 1vw;
+}
+
+.sign {
+    margin-left: 2vw;
 }
 
 .signup {
-    margin-top:35vw;
+    margin-top: 35vw;
+    padding-left: 2vw;
     background-image: url('https://images.unsplash.com/photo-1697215786004-682b1684c65e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 }
 
@@ -104,11 +175,13 @@ footer {
     padding: 20px 0;
 }
 
-.para {
-    margin-left: 20rem;
+strong {
+    margin-left: 15rem;
     word-spacing: 2px;
     font-weight: 200;
-    font-size: larger;
+    font-size: 1.5rem;
+    color: transparent;
+    -webkit-text-stroke: 1px #333;
     margin-top: 0%;
     letter-spacing: 2px;
 }
@@ -116,8 +189,8 @@ footer {
 .btn {
     filter: drop-shadow(4px 4px 8px white);
     letter-spacing: 2px;
-    margin:1vw 3vw;
-    margin-left: 38vw;
+    margin: 1vw;
+    margin-left: 44vw;
     color: #232323;
     font-size: large;
 }
@@ -130,18 +203,24 @@ footer {
 }
 
 .img {
-    margin-top:4px;
+    transition: transform ease-in-out 0.2s;
+    margin-top: 1rem;
     background-color: rgba(255, 255, 255, 0.747);
     object-fit: cover;
     border-radius: 6px;
     font-size: 1vw;
     border: 2px solid #333;
-    margin-left: 0.3rem;
+    margin-left: 0.7rem;
     width: 23.4vw;
     height: 50vh;
 }
+
+.img:hover {
+    transform: scale(1.03);
+}
+
 .img img {
-    height:55%;
+    height: 55%;
     width: 100%;
 }
 
@@ -153,42 +232,59 @@ footer {
     height: 20rem;
     width: 100vw;
 }
-.feature h1{
-    padding: 1vw 1vw;
+
+.feature h1 {
+    padding-top: 2vw;
+    padding-left: 1vw;
+}
+
+h2 {
+    padding-left: 1vw;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .swiper {
     width: 30rem;
-    height: 30rem;
+    height: 34rem;
     position: absolute;
-    left: 50%;
-    /* top: 50%; */
-   
+    left: 43%;
+    animation: rotate 4s linear infinite;
     margin-left: -150px;
-    margin-top: -150px;
-  }
+    margin-top: -80px;
+}
 
-  .swiper-slide {
+.swiper-slide {
     background-position: center;
     background-size: cover;
-  }
+}
 
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
-    height:30rem;
-  }
+    height: 30rem;
+}
 
-  #beauty{
+#beauty {
     background-color: #333;
-    margin-top:7vw;
-  }
-#about{
+    margin-top: 7vw;
+}
+
+#about {
     color: #fff;
     border-radius: 2px;
+    padding-bottom: 0;
 }
-.contact{
+
+.contact {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
 
 }

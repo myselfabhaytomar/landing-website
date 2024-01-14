@@ -33,3 +33,19 @@ var swiper = new Swiper(".mySwiper", {
       el: ".swiper-pagination",
     },
   });
+
+ 
+
+  var canvas = document.getElementById('myCanvas');
+  var ctx = canvas.getContext('2d');
+  var x = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(x, 20, 50, 50);
+    x += 2;
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+
